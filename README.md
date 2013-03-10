@@ -14,3 +14,4 @@ The following technologies and libs are used:
 * Knockoutjs
 * Sammyjs
 * Requirejs
+* koExternalTemplateEngine

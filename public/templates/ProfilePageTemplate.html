@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="hero-unit">
+		<h1 data-bind="text: heroUnit.title" class="text-center"></h1>
+		<img class="img-circle pull-left" data-bind="attr: {'src': heroUnit.imgSrc}" />
+		<p data-bind="text: heroUnit.content"></p>
+		<button class="btn btn-primary btn-large pull-right">I wanna be a kickass coder!</button>
+		<div class="clearfix"></div>
+	</div>
+	
+	<div class="row" data-bind="foreach: favProgLangs">
+		<div class="span4">
+			<div class="well text-center">
+				<h2 data-bind="text: name"></h2>
+				<img class="img-polaroid" data-bind="attr: {src: imgSrc}"/>
+				<p data-bind="text: desc"></p>
+			</div>
+		</div>
+	</div>
+</div>

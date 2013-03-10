@@ -1,0 +1,68 @@
+<div class="container">
+	<div class="row">
+		<div class="span3">
+			<div class="well">
+				<h3 class="muted text-center">TodoLists</h3>
+				<ul class="nav nav-list" data-bind="foreach: todoLists">
+		          <li data-bind="css: {'active': $parent.activeTodoList() && _id === $parent.activeTodoList()._id}"><a data-bind="attr: {'href': link}"><span data-bind="text: title"></span> <i class="icon-chevron-right pull-right"></i></a></li>
+		        </ul>
+			</div>
+	        <div class="well">
+	        	<h3 class="muted text-center">New TodoList</h3>
+				<input type="text" placeholder="New TodoList's name" class="input-block-level" data-bind="value: newTodoList.title, valueUpdate: 'afterkeydown'"/>
+			    <button class="btn btn-primary btn-block" data-bind="click: newTodoList.save, disable: newTodoList.saveDisabled">Add TodoList</button>
+	        </div>
+		</div>
+		
+		<div class="span9">
+			<!-- ko if: activeTodoList -->
+			<div class="well" data-bind="with: activeTodoList">
+				<h1 data-bind="text: title"></h1>
+				
+				<table class="table table-condensed table-hover">
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Priority</th>
+							<th>Deadline</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody data-bind="foreach: todos">
+						<tr>
+							<td data-bind="text: title"></td>
+							<td data-bind="text: priority"></td>
+							<td data-bind="text: deadline"></td>
+							<td>
+								<button class="btn btn-mini btn-danger btn-block" data-bind="click: $parent.deleteTodo"><span class="icon-trash"></span> Delete</button>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot data-bind="with: newTodo">
+						<tr>
+							<td>
+								<input class="input-block-level" placeholder="Title" type="text" data-bind="value: title, valueUpdate: 'afterkeydown'" />
+							</td>
+							<td>
+								<input class="input-block-level" type="number" data-bind ="value: priority" />
+							</td>
+							<td>
+								<input class="input-block-level" placeholder="Deadline" data-bind="value: deadline" />
+							</td>
+							<td>
+								<button class="btn btn-primary btn-block" data-bind="click: save, disable: saveDisabled"><span class="icon-plus"></span> Add Todo</button>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+			<!-- /ko -->
+			
+			<!-- ko ifnot: activeTodoList -->
+				<div class="well text-center">
+					<img src="images/TodoListIcon.png"/>
+				</div>
+			<!-- /ko -->
+		</div>
+	</div>
+</div>

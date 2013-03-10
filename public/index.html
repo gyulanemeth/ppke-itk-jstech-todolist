@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title data-bind="text: title">JSTech</title>
+		<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+		
+		<script data-main="./main.js" src="./lib/require.js"></script>
+	</head>
+	<body style="background-color: #222;">
+		<header>
+			<div class="navbar">
+				<div class="navbar-inner">
+					<a class="brand" href="#">
+						JSTech
+					</a>
+					<div data-bind="template: {name: 'MainMenuTemplate', data: mainMenu}"></div>
+				</div>
+			</div>
+		</header>
+		
+		<section>
+			<!-- ko if: pages.profilePageVM -->
+				<div data-bind="template: {name: 'ProfilePageTemplate', data: pages.profilePageVM}"></div>
+			<!-- /ko -->
+			
+			<!-- ko if: pages.todoListsVM -->
+				<div data-bind="template: {name: 'TodoListsTemplate', data: pages.todoListsVM}"></div>
+			<!-- /ko -->
+		</section>
+		
+		<footer class="well text-center" style="background-image: url('./images/pattern2.png');">
+			JSTech @ PPKE-ITK - 2013
+		</footer>
+	</body>
+</html>

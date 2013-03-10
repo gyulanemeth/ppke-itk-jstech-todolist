@@ -1,0 +1,12 @@
+{
+	"name": "ppke-itk-jstech-todolist",
+	"description": "This is an example homework solution of the course \"Javascript technologies and html5\" at Pázmány Péter Catholic University - Faculty of Information Technology (Budapest, Hungary).",
+	"version": "0.0.1",
+	"author": "Németh Gyula",
+	"private": false,
+	"dependencies": {
+		"express": "3.x",
+		"mongoose": "3.x"
+	},
+	"license": "MIT"
+}

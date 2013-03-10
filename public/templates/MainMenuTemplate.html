@@ -1,0 +1,7 @@
+<ul class="nav" data-bind="foreach: items">
+	<li data-bind="css: {'active': $parent.selectedItemHash() === hash}">
+		<a data-bind="attr: {'href': hash}">
+			<span data-bind="attr: {'class': icon}, css: {'icon-white': $parent.selectedItemHash() === hash}"></span> <span data-bind="text: label"></span>
+		</a>
+	</li>
+</ul>
